@@ -9,6 +9,8 @@ TagManager:
   - +25
   - +50
   - +5
+  - GameOver
+  - target
   layers:
   - Default
   - TransparentFX

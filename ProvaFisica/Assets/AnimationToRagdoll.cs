@@ -5,10 +5,10 @@ using UnityEngine;
 public class AnimationToRagdoll : MonoBehaviour
 {
     [SerializeField] Collider myCollider;
-    [SerializeField] float respawnTime = 30f;
+    //[SerializeField] float respawnTime = 30f;
     Rigidbody[] rigidbodies;
     bool bIsRagdoll = false;
-     bool Recover = false;
+     //bool Recover = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,7 +29,7 @@ public class AnimationToRagdoll : MonoBehaviour
         if (collision.gameObject.CompareTag("Inimigo") && !bIsRagdoll)
         {
             ToggleRagdoll(false);
-            StartCoroutine(GetBackUp());
+            //StartCoroutine(GetBackUp());
         }
     }
 
@@ -51,13 +51,13 @@ public class AnimationToRagdoll : MonoBehaviour
        
     }
 
-    private IEnumerator GetBackUp()
-    {
-        Animator animator = GetComponent<Animator>();
-        yield return new WaitForSeconds(respawnTime);
-        animator.SetTrigger("Recover");
-        ToggleRagdoll(true);
-    }
+    //private IEnumerator GetBackUp()
+    //{
+        //Animator animator = GetComponent<Animator>();
+        //yield return new WaitForSeconds(respawnTime);
+        //animator.SetTrigger("Recover");
+       // ToggleRagdoll(true);
+    //}
 
     /*void RandomAnimation()
     {
