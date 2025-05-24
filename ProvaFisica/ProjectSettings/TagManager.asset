@@ -12,6 +12,7 @@ TagManager:
   - GameOver
   - target
   - Mago
+  - Projectile
   layers:
   - Default
   - TransparentFX
