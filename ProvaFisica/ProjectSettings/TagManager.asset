@@ -11,11 +11,12 @@ TagManager:
   - +5
   - GameOver
   - target
+  - Mago
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Catapulta
   - Water
   - UI
   - 

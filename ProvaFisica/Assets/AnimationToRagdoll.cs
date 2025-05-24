@@ -26,10 +26,11 @@ public class AnimationToRagdoll : MonoBehaviour
     {
         //Debug.Log("Colisão detectada com: " + $" {JsonUtility.ToJson(collision)} ");
         //Debug.Log("Colisão detectada com: " + $" {collision.gameObject.name}" + $"- Tag: {collision.gameObject.tag} - bIsragdoll: " + $" {bIsRagdoll}");
-        if (collision.gameObject.CompareTag("Inimigo") && !bIsRagdoll)
+        if (collision.gameObject.CompareTag("Projectile") && !bIsRagdoll)
         {
             ToggleRagdoll(false);
             //StartCoroutine(GetBackUp());
+            Destroy(gameObject, 8f);
         }
     }
 
