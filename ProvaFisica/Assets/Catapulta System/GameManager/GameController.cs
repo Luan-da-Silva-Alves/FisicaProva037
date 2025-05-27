@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class GameController : MonoBehaviour
 {
     public int pontos = 0;
@@ -34,7 +35,7 @@ public class GameController : MonoBehaviour
         if (pontos >= 500)
         {
             pontos = 500;
-            Debug.Log("Fim da fase");
+            SceneManager.LoadScene("Vitória");
         }
     }
 

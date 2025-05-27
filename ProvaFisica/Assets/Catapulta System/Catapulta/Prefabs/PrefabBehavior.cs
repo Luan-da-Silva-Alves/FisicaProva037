@@ -14,7 +14,7 @@ public class PrefabBehavior : MonoBehaviour
     {
         game = GameObject.Find("Game").GetComponent<GameController>();
 
-        Destroy(gameObject, 15f);
+        Destroy(gameObject, 6f);
     }
 
     // Update is called once per frame
@@ -35,11 +35,41 @@ public class PrefabBehavior : MonoBehaviour
             {
 
                 Rigidbody rigidbody = nearbyObjectCollider.GetComponent<Rigidbody>();
+                AnimationToRagdoll ragdoll = nearbyObjectCollider.GetComponent<AnimationToRagdoll>();
 
                 if (rigidbody != null)
                 {
 
                     rigidbody.AddExplosionForce(explositionForce, transform.position, radius, explositionForce);
+                    
+                    if (nearbyObjectCollider.CompareTag("+10"))
+                    {
+                        ragdoll.ToggleRagdoll(false);
+                        
+                        game.pontos += 10;
+                        
+
+                    }
+
+
+                    if (nearbyObjectCollider.CompareTag("+25"))
+                    {
+                        ragdoll.ToggleRagdoll(false);
+                        
+                        game.pontos += 25;
+
+
+                    }
+
+                    if (nearbyObjectCollider.CompareTag("+50"))
+                    {
+                        ragdoll.ToggleRagdoll(false);
+                        Debug.Log("Colidiu " + nearbyObjectCollider);
+                        game.pontos += 50;
+
+
+                    }
+                    
                     Destroy(explosaoPrefab);
                 }
 
@@ -48,26 +78,26 @@ public class PrefabBehavior : MonoBehaviour
 
 
         }
-           
 
 
 
-        if (collision.collider.CompareTag("+10"))
-        {
-            //Debug.Log("colidiu com o mago");
-            game.pontos += 10;
-        }
-        if (collision.collider.CompareTag("+25"))
-        {
-            //Debug.Log("colidiu com o mago");
-            game.pontos += 25;
-        }
-        if (collision.collider.CompareTag("+50"))
-        {
-            //Debug.Log("colidiu com o mago");
-            game.pontos += 50;
 
-        }
+        //if (collision.collider.CompareTag("+10"))
+        //{
+        //    //Debug.Log("colidiu com o mago");
+        //    game.pontos += 10;
+        //}
+        //if (collision.collider.CompareTag("+25"))
+        //{
+        //    //Debug.Log("colidiu com o mago");
+        //    game.pontos += 25;
+        //}
+        //if (collision.collider.CompareTag("+50"))
+        //{
+        //    //Debug.Log("colidiu com o mago");
+        //    game.pontos += 50;
+
+        //}
         if (collision.collider.CompareTag("+5"))
         {
             //Debug.Log("colidiu com o mago");

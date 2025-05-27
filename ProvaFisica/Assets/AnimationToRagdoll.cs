@@ -34,7 +34,7 @@ public class AnimationToRagdoll : MonoBehaviour
         }
     }
 
-    private void ToggleRagdoll(bool bisAnimating)
+    public void ToggleRagdoll(bool bisAnimating)
     {
         bIsRagdoll = !bisAnimating;
         myCollider.enabled = bisAnimating;
@@ -49,7 +49,11 @@ public class AnimationToRagdoll : MonoBehaviour
             Animator animator = GetComponent<Animator>();
 
         }
-       
+        if (!bisAnimating)
+        {
+            Destroy(gameObject, 8f);
+        }
+        
     }
 
     //private IEnumerator GetBackUp()
